@@ -21,30 +21,51 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<style type="text/css">
+			.compare-jest-vs-enzyme {
+				display: flex;
+				justify-content: center;
+			}
+
+			.compare-item {
+				width: 33%;
+				text-align: center;
+			}
+
+			.brand-icon {
+				width: 100px;
+				height: 100px;
+				border: 0 !important;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>O Component, My Component</h1>
-					<h2>A brief description on react component flavours and their use case </h2>
+					<h1>Enzyme vs. Jest</h1>
+					<h2>Why, How, What?</h2>
 					<p>&nbsp;</p>
-					<p>Thomas Kolar, Engineer @SilverTours GmbH</p>
+					<p>Johannes Jambor, Engineer @SilverTours GmbH</p>
 					<ul class="fa-ul">
-						<li style="list-style: none;"><a href="mailto:thomas.kolar@billiger-mietwagen.de"><i class="fa-li fa fa-envelope-o" aria-hidden="true"></i>&nbsp;kolar@billiger-mietwagen.de</a></li>
-						<li style="list-style: none;"><a href="https://github.com/C3-TKO/"><i class="fa-li fa fa-github" aria-hidden="true"></i>&nbsp;C3-TKO</li></a>
+						<li style="list-style: none;"><a href="mailto:jambor@billiger-mietwagen.de"><i class="fa-li fa fa-envelope-o" aria-hidden="true"></i>&nbsp;jambor@billiger-mietwagen.de</a></li>
+						<li style="list-style: none;"><a href="https://github.com/MrSchneepflug"><i class="fa-li fa fa-github" aria-hidden="true"></i>&nbsp;Mr. Schneepflug</li></a>
 					</ul>
 
 				</section>
+
 				<section>
-					<h1>Overview</h1>
-					<ul>
-						<li class="fragment fade-up">Introduction</li>
-						<li class="fragment fade-up">Problem Statement</li>
-						<li class="fragment fade-up">Redux</li>
-                        <li class="fragment fade-up">Live Coding Session</li>
-					</ul>
+					<div class="compare-jest-vs-enzyme">
+						<div class="compare-item">
+							<h2>Jest</h2>
+							<img src="images/facebook.png" class="brand-icon fragment fade-up">
+						</div>
+						<div class="compare-item">
+							<h2>Enzyme</h2>
+							<img src="images/airbnb.png" class="brand-icon fragment fade-up">
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
@@ -63,6 +84,11 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
+			});
+
+			Reveal.configure({
+			  slideNumber: true,
+			  history: true
 			});
 		</script>
 	</body>
