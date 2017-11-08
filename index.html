@@ -27,7 +27,7 @@
 				list-style-type: none !important;
 			}
 
-			.compare-jest-vs-enzyme {
+			.compare-container {
 				display: flex;
 				justify-content: center;
 			}
@@ -64,7 +64,7 @@
 				</section>
 
 				<section>
-					<div class="compare-jest-vs-enzyme">
+					<div class="compare-container">
 						<div class="compare-item">
 							<h2>Jest</h2>
 							<ul>
@@ -97,31 +97,98 @@
 							<li class="fragment fade-up">Coverage-Support</li>
 						</ul>
 					</section>
+				</section>
+
+				<section>
+					<h2>Jest - Test Runner</h2>
 
 					<section>
-						<h4>Test Runner</h4>
-						<ul style="text-align: center;">
-							<li class="fragment fade-up">
-								<img class="fragment fade-out" src="images/npm-run-test.gif">
-							</li>
-							<li class="fragment fade-up">
-								<!-- style="position: relative; top: -550px;" -->
-								<img class="fragment fade-out" src="images/jest-usage.png">
-							</li>
-							<li class="fragment fade-up">
-								<img class="fragment fade-out" src="images/usage.gif">
-							</li>
-						</ul>
+						<h3>Demo</h3>
+						<img class="fragment fade-up plain" src="images/npm-run-test.gif">
 					</section>
+
 					<section>
-						<h4>Expectation-Library</h4>
+						<h3>Usage</h3>
+						<img src="images/jest-usage.png">
 					</section>
+
+ 					<section>
+						<h3>Filter</h3>
+						<img class="fragment fade-up" src="images/usage.gif">
+					</section>
+
 					<section>
-						<h4>Mock-Library</h4>
+						<h3>Environment</h3>
+						<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+						describe("Some component", () => {
+						  it('will do some fancy stuff', () => {
+
+						  });
+						});
+					</code></pre>
 					</section>
+
 					<section>
-						<h4>Coverage-Support</h4>
+						<h3>Alternatives</h3>
+
+						<div class="compare-container">
+							<div class="compare-item">
+								<img class="fragment fade-up" src="images/jasmine.png"/>
+							</div>
+							<div class="compare-item">
+								<img class="fragment fade-up" src="images/mocha.png"/>
+							</div>
+						</div>
 					</section>
+				</section>
+
+				<section>
+					<h2>Jest - Expectation-Library</h2>
+
+					<section>
+						<h3>Example</h3>
+
+						<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+							describe("Some component", () => {
+							  it('will do some fancy stuff', () => {
+								<span class="fragment fade-right">expect(someResult).toBe(true);</span>
+							  });
+							});
+						</code></pre>
+
+						<span class="fragment fade-right">
+							<a href="https://facebook.github.io/jest/docs/en/expect.html" target="_blank">
+								https://facebook.github.io/jest/docs/en/expect.html
+							</a>
+						</span>
+					</section>
+
+					<section>
+						<h3>Alternatives</h3>
+
+						<div class="compare-container">
+							<div class="compare-item">
+								<img class="fragment fade-up" src="images/chai.png"/>
+							</div>
+							<div class="compare-item">
+								<img class="fragment fade-up" src="images/should.png"/>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h2>Mock-Library</h2>
+
+					<section>
+						<h3>Alternatives</h3>
+
+						<img class="fragment fade-up" src="images/sinon.png">
+					</section>
+				</section>
+
+				<section>
+					<h4>Coverage-Support</h4>
 				</section>
 
 				<section>
@@ -167,7 +234,8 @@
 
 			Reveal.configure({
 			  slideNumber: true,
-			  history: true
+			  history: true,
+			  transition: 'none'
 			});
 		</script>
 	</body>
