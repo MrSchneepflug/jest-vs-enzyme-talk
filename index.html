@@ -66,6 +66,11 @@
 				height: 100px;
 				border: 0 !important;
 			}
+
+			code {
+				font-size: 1.5em !important;
+				line-height: 1.2em !important;
+			}
 		</style>
 	</head>
 	<body>
@@ -73,7 +78,7 @@
 			<div class="slides">
 				<section>
 					<h1>Enzyme vs. Jest</h1>
-					<h2>Why, How, What?</h2>
+					<h2>Overview</h2>
 					<p>&nbsp;</p>
 					<p>Johannes Jambor, Engineer @SilverTours GmbH</p>
 					<ul class="fa-ul">
@@ -120,18 +125,14 @@
 
 				<section>
 					<div class="header">
-						<div class="header-item">
-							<h2>Jest - Test Runner</h2>
-						</div>
+						<h2>Jest - Test Runner</h2>
 
-						<div class="header-item">
-							<ul class="map" style="float: left;">
-								<li><i class="fa fa-circle"></i> Test Runner</li>
-								<li><i class="fa fa-circle-o"></i> Expectation-Library</li>
-								<li><i class="fa fa-circle-o"></i> Mock-Library</li>
-								<li><i class="fa fa-circle-o"></i> Coverage-Support</li>
-							</ul>
-						</div>
+						<ul class="map">
+							<li><i class="fa fa-circle"></i> Test Runner</li>
+							<li><i class="fa fa-circle-o"></i> Expectation-Library</li>
+							<li><i class="fa fa-circle-o"></i> Mock-Library</li>
+							<li><i class="fa fa-circle-o"></i> Coverage-Support</li>
+						</ul>
 					</div>
 
 					<section>
@@ -156,7 +157,7 @@
 
 					<section>
 						<h3>Environment</h3>
-						<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
 						describe("Some component", () => {
 						  it('will do some fancy stuff', () => {
 
@@ -167,7 +168,7 @@
 
 					<section>
 						<h3>Environment</h3>
-						<pre style="width: 50%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
 						import React from "react";
 						import { configure } from "enzyme";
 						import Adapter from "enzyme-adapter-react-15";
