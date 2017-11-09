@@ -28,7 +28,9 @@
             }
 
             ul.map {
-                width: 50%;
+                position: relative;
+                top: 32px;
+                width: 100%;
                 font-size: 0.6em;
                 display: table;
             }
@@ -40,7 +42,11 @@
 
             .header {
                 width: 100%;
-                text-align: center;
+                display: flex;
+            }
+
+            .header-item {
+                width: 50%;
             }
 
             .compare-container {
@@ -95,8 +101,8 @@
                         <div class="compare-item">
                             <h2>Jest</h2>
                             <ul>
-                                <li class="fragment fade-up"><strong>Test-Framework for <br>JavaScript-Applications</strong></li>
-                                <li class="fragment fade-up">
+                                <li class="fragment fade-up" style="text-align: center;"><strong>Test-Framework for <br>JavaScript-Applications</strong></li>
+                                <li class="fragment fade-up" style="text-align: center;">
                                     <img src="images/facebook.png" class="plain brand-icon">
                                 </li>
                             </ul>
@@ -104,8 +110,8 @@
                         <div class="compare-item">
                             <h2>Enzyme</h2>
                             <ul>
-                                <li class="fragment fade-up"><strong>Test-Utility for <br>React-Applications</strong></li>
-                                <li class="fragment fade-up" style="background-color: #fdf6e3">
+                                <li class="fragment fade-up" style="text-align: center;"><strong>Test-Utility for <br>React-Applications</strong></li>
+                                <li class="fragment fade-up" style="background-color: #fdf6e3; text-align: center;">
                                     <img src="images/airbnb.png" class="plain brand-icon">
                                 </li>
                             </ul>
@@ -128,13 +134,17 @@
 
                 <section>
                     <div class="header">
-                        <ul class="map">
-                            <li><h2>Jest</h2></li>
-                            <li><i class="fa fa-circle"></i> Test Runner</li>
-                            <li><i class="fa fa-circle-o"></i> Expectation-Library</li>
-                            <li><i class="fa fa-circle-o"></i> Mock-Library</li>
-                            <li><i class="fa fa-circle-o"></i> Coverage-Support</li>
-                        </ul>
+                        <div class="header-item">
+                            <h2>Jest</h2>
+                        </div>
+                        <div class="header-item">
+                            <ul class="map">
+                                <li><i class="fa fa-circle"></i> Test Runner</li>
+                                <li><i class="fa fa-circle-o"></i> Expectation-Library</li>
+                                <li><i class="fa fa-circle-o"></i> Mock-Library</li>
+                                <li><i class="fa fa-circle-o"></i> Coverage-Support</li>
+                            </ul>
+                        </div>
                     </div>
 
                     <section>
@@ -484,8 +494,8 @@ All files                       |      100 |      100 |      100 |      100 |   
                     <section>
                         <ul style="text-align: center;">
                             <li class="plain fragment fade-up">Render Components</li>
-                            <li class="plain fragment fade-up">Simulate Events</li>
                             <li class="plain fragment fade-up">Query</li>
+                            <li class="plain fragment fade-up">Simulate Events</li>
                         </ul>
                     </section>
                 </section>
@@ -499,8 +509,8 @@ All files                       |      100 |      100 |      100 |      100 |   
                         <div class="header-item">
                             <ul class="map" style="float: left;">
                                 <li><i class="fa fa-circle"></i> Render Components</li>
+                                <li><i class="fa fa-circle-o"></i> Query</li>
                                 <li><i class="fa fa-circle-o"></i> Simulate Events</li>
-                                <li><i class="fa fa-circle-o"></i> Query</li>
                             </ul>
                         </div>
                     </div>
@@ -508,7 +518,16 @@ All files                       |      100 |      100 |      100 |      100 |   
                     <section>
                         <h3>Example</h3>
 
-                        ...
+                        <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+const SilverTours = () => {
+  return &lt;div>SilverTours&lt;/div>
+};
+
+it("should render a div with 'SilverTours' as content", () => {
+  <span class="fragment fade-up" data-fragment-index="1">const wrapper = shallow(&lt;SilverTours/>);</span>
+  <span class="fragment fade-up" data-fragment-index="2">expect(wrapper.find('div').html()).toEqual('&lt;div>SilverTours&lt;/div>');</span>
+});
+                        </code></pre>
                     </section>
                 </section>
 
@@ -521,36 +540,58 @@ All files                       |      100 |      100 |      100 |      100 |   
                         <div class="header-item">
                             <ul class="map" style="float: left;">
                                 <li><i class="fa fa-check-circle check-green"></i> Render Components</li>
-                                <li><i class="fa fa-circle"></i> Simulate Events</li>
-                                <li><i class="fa fa-circle-o"></i> Query</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <section>
-                        <h3>Example</h3>
-
-                        ...
-                    </section>
-                </section>
-
-                <section>
-                    <div class="header">
-                        <div class="header-item">
-                            <h2>Enzyme</h2>
-                        </div>
-
-                        <div class="header-item">
-                            <ul class="map" style="float: left;">
-                                <li><i class="fa fa-check-circle check-green"></i> Render Components</li>
-                                <li><i class="fa fa-check-circle check-green"></i> Simulate Events</li>
                                 <li><i class="fa fa-circle"></i> Query</li>
+                                <li><i class="fa fa-circle-o"></i> Simulate Events</li>
                             </ul>
                         </div>
                     </div>
 
                     <section>
                         <h3>Example</h3>
+
+                        ...
+                    </section>
+                </section>
+
+                <section>
+                    <div class="header">
+                        <div class="header-item">
+                            <h2>Enzyme</h2>
+                        </div>
+
+                        <div class="header-item">
+                            <ul class="map" style="float: left;">
+                                <li><i class="fa fa-check-circle check-green"></i> Render Components</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Query</li>
+                                <li><i class="fa fa-circle"></i> Simulate Events</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <section>
+                        <h3>Example</h3>
+
+                        ...
+                    </section>
+                </section>
+
+                <section>
+                    <div class="header">
+                        <div class="header-item">
+                            <h2>Enzyme</h2>
+                        </div>
+
+                        <div class="header-item">
+                            <ul class="map" style="float: left;">
+                                <li><i class="fa fa-check-circle check-green"></i> Render Components</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Query</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Simulate Events</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <section>
+                        <h3>Wrap Up</h3>
 
                         ...
                     </section>
