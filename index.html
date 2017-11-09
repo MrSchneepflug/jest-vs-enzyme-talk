@@ -372,19 +372,13 @@ exports[`Snapshot Example will match snapshot 1`] = `
                     <section>
                         <h3>Example</h3>
 
-                        <div class="fragment fade-up">
                             <pre style="width: 70%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-                                const apply = (collection, callback) => {
-                                <div class="fragment fade-up">
-                                    for (let index = 0; index < collection.length; index++) {
-                                    <div class="fragment fade-up">
-                                        callback(collection[index]);
-                                    </div>
-                                    }
-                                </div>
-                                };
+<span class="fragment fade-up" data-fragment-index="1">const apply = (collection, callback) => {</span>
+  <span class="fragment fade-up" data-fragment-index="2">for (let index = 0; index < collection.length; index++) {</span>
+    <span class="fragment fade-up" data-fragment-index="3">callback(collection[index]);</span>
+  <span class="fragment fade-up" data-fragment-index="2">}</span>
+<span class="fragment fade-up" data-fragment-index="1">};</span>
                             </code></pre>
-                        </div>
 
                         <div class="fragment fade-up">
                             <pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
@@ -422,6 +416,37 @@ exports[`Snapshot Example will match snapshot 1`] = `
                             </ul>
                         </div>
                     </div>
+
+                    <section>
+                        <h3>Example</h3>
+                        <pre style="width: 100%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+--------------------------------|----------|----------|----------|----------|----------------|
+File                            |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+--------------------------------|----------|----------|----------|----------|----------------|
+All files                       |      100 |      100 |      100 |      100 |                |
+ components                     |      100 |      100 |      100 |      100 |                |
+  button.jsx                    |      100 |      100 |      100 |      100 |                |
+  header-navigation-element.jsx |      100 |      100 |      100 |      100 |                |
+  svgmap.jsx                    |      100 |      100 |      100 |      100 |                |
+ components/icons               |      100 |      100 |      100 |      100 |                |
+  arrow-down.jsx                |      100 |      100 |      100 |      100 |                |
+  arrow-left.jsx                |      100 |      100 |      100 |      100 |                |
+  thumb.jsx                     |      100 |      100 |      100 |      100 |                |
+ components/logos               |      100 |      100 |      100 |      100 |                |
+  bm.jsx                        |      100 |      100 |      100 |      100 |                |
+  svglogo.jsx                   |      100 |      100 |      100 |      100 |                |
+--------------------------------|----------|----------|----------|----------|----------------|
+                        </code></pre>
+
+                    </section>
+
+                    <section>
+                        <h3>Alternatives</h3>
+
+                        <div style="background-color: #fdf6e3;">
+                            <img class="plain fragment fade-up" src="images/istanbul.png" style="mix-blend-mode: multiply !important;">
+                        </div>
+                    </section>
                 </section>
 
                 <section>
