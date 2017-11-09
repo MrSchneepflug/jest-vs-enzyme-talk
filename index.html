@@ -232,9 +232,13 @@
                         <div class="compare-container">
                             <div class="compare-item">
                                 <img class="plain fragment fade-up" src="images/jasmine.png" style=" mix-blend-mode: multiply !important;"/>
+                                <br>
+                                <a class="fragment fade-up" href="https://jasmine.github.io/">https://jasmine.github.io/</a>
                             </div>
                             <div class="compare-item">
                                 <img class="plain fragment fade-up" src="images/mocha.png"  style=" mix-blend-mode: multiply !important;"/>
+                                <br>
+                                <a class="fragment fade-up" href="https://mochajs.org/">https://mochajs.org/</a>
                             </div>
                         </div>
                     </section>
@@ -480,7 +484,7 @@ All files                       |      100 |      100 |      100 |      100 |   
 
                         <ul style="text-align: center;">
                             <li class="fragment fade-up">Great interface for JavaScript tests</li>
-                            <li class="fragment fade-up">Great performance (last changed files, filters, ..)</li>
+                            <li class="fragment fade-up">Great performance (parallelism, last changed files, filters, ..)</li>
                             <li class="fragment fade-up">Snapshot tests</li>
                             <li class="fragment fade-up">All-In-One-Solution</li>
                         </ul>
@@ -519,6 +523,8 @@ All files                       |      100 |      100 |      100 |      100 |   
                         <h3>Example</h3>
 
                         <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+import { shallow } from 'enzyme';
+
 const SilverTours = () => {
   return &lt;div>SilverTours&lt;/div>
 };
@@ -528,6 +534,14 @@ it("should render a div with 'SilverTours' as content", () => {
   <span class="fragment fade-up" data-fragment-index="2">expect(wrapper.find('div').html()).toEqual('&lt;div>SilverTours&lt;/div>');</span>
 });
                         </code></pre>
+
+                        <br>
+
+                        <ul>
+                            <li class="fragment fade-up" style="display: inline; padding: 0 20px;"><strong>Shallow Rendering</strong></li>
+                            <li class="fragment fade-up" style="display: inline; padding: 0 20px;"><strong>Full DOM Rendering</strong></li>
+                            <li class="fragment fade-up" style="display: inline; padding: 0 20px;"><strong>Static Rendering</strong></li>
+                        </ul>
                     </section>
                 </section>
 
@@ -547,9 +561,20 @@ it("should render a div with 'SilverTours' as content", () => {
                     </div>
 
                     <section>
-                        <h3>Example</h3>
+                        <h3>Selectors</h3>
 
-                        ...
+                        <ul style="text-align: center;">
+                            <li class="fragment fade-up">class syntax (<strong>.foo, .foo-bar, ...</strong>)</li>
+                            <li class="fragment fade-up">element syntax (<strong>input, div, span, ...</strong>)</li>
+                            <li class="fragment fade-up">id syntax (<strong>#foo, #foo-bar, ...</strong>)</li>
+                            <li class="fragment fade-up">attribute syntax (<strong>[href="foo"], [type="text"], ...</strong>)</li>
+                        </ul>
+
+                        <pre class="fragment fade-up" style="width: 60%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+const silverToursComponent = wrapper.find(SilverTours);
+                        </code></pre>
+
+                        <a class="fragment fade-up" href="http://airbnb.io/enzyme/docs/api/selector.html">http://airbnb.io/enzyme/docs/api/selector.html</a>
                     </section>
                 </section>
 
@@ -571,7 +596,9 @@ it("should render a div with 'SilverTours' as content", () => {
                     <section>
                         <h3>Example</h3>
 
-                        ...
+                        <pre class="fragment fade-up" style="width: 60%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+wrapper.find('a').simulate('click');
+                        </code></pre>
                     </section>
                 </section>
 
@@ -593,8 +620,21 @@ it("should render a div with 'SilverTours' as content", () => {
                     <section>
                         <h3>Wrap Up</h3>
 
-                        ...
+                        <ul style="text-align: center;">
+                            <li class="fragment fade-up">Great addition for component tests</li>
+                            <li class="fragment fade-up">Promotes readability of test</li>
+                            <li class="fragment fade-up">Kind of familiar</li>
+                        </ul>
                     </section>
+                </section>
+
+                <section class="center">
+                    <h1>Jest vs. Enzyme</h1>
+                </section>
+
+                <section class="center" data-transition="zoom">
+                    <h1>Jest & Enzyme</h1>
+                    <span class="fragment fade-up"><strong>thanks</strong></span>
                 </section>
 
             </div>
