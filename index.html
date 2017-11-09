@@ -1,410 +1,427 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Learning React - Buzzword ⚡ Talk</title>
+        <title>Learning React - Buzzword ⚡ Talk</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/solarized.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/solarized.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<style type="text/css">
-			ul {
-				list-style-type: none !important;
-			}
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <style type="text/css">
+            ul {
+                list-style-type: none !important;
+            }
 
-			ul.map {
-				font-size: 0.6em;
+            ul.map {
+                width: 50%;
+                font-size: 0.6em;
+                display: table;
+            }
 
-			}
+            ul.map li {
+                display: table-cell;
+                line-height: 2;
+            }
 
-			ul.map li {
-				padding-left: 20px;
-				padding-right: 20px;
-				display: inline;
-			}
+            .header {
+                width: 100%;
+                text-align: center;
+            }
 
-			.header {
-				width: 100%;
-				display: flex;
-			}
+            .compare-container {
+                display: flex;
+                justify-content: center;
+            }
 
-			.header-item {
-			}
+            .compare-jest-vs-enzyme ul {
+                text-align: center;
+                margin: 0;
+            }
 
-			.compare-container {
-				display: flex;
-				justify-content: center;
-			}
+            .compare-item {
+                width: 33%;
+                text-align: center;
+                background-color: #fdf6e3;
+            }
 
-			.compare-jest-vs-enzyme ul {
-				text-align: center;
-				margin: 0;
-			}
+            .brand-icon {
+                width: 100px;
+                height: 100px;
+                border: 0 !important;
+                mix-blend-mode: multiply;
+            }
 
-			.compare-item {
-				width: 33%;
-				text-align: center;
-				background-color: #fdf6e3;
-			}
+            code {
+                font-size: 1.5em !important;
+                line-height: 1.2em !important;
+            }
 
-			.brand-icon {
-				width: 100px;
-				height: 100px;
-				border: 0 !important;
-				mix-blend-mode: multiply;
-			}
+            .check-green {
+                color: #008020;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section class="center">
+                    <h1>Jest vs. Enzyme</h1>
+                    <h2>Overview</h2>
+                    <p>&nbsp;</p>
+                    <p>Johannes Jambor, Engineer @SilverTours GmbH</p>
+                    <ul class="fa-ul">
+                        <li style="list-style: none;"><a href="mailto:jambor@billiger-mietwagen.de"><i class="fa-li fa fa-envelope-o" aria-hidden="true"></i>&nbsp;jambor@billiger-mietwagen.de</a></li>
+                        <li style="list-style: none;"><a href="https://github.com/MrSchneepflug"><i class="fa-li fa fa-github" aria-hidden="true"></i>&nbsp;Mr. Schneepflug</li></a>
+                    </ul>
+                </section>
 
-			code {
-				font-size: 1.5em !important;
-				line-height: 1.2em !important;
-			}
+                <section class="center">
+                    <div class="compare-container">
+                        <div class="compare-item">
+                            <h2>Jest</h2>
+                            <ul>
+                                <li class="fragment fade-up"><strong>Test-Framework for <br>JavaScript-Applications</strong></li>
+                                <li class="fragment fade-up">
+                                    <img src="images/facebook.png" class="plain brand-icon">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="compare-item">
+                            <h2>Enzyme</h2>
+                            <ul>
+                                <li class="fragment fade-up"><strong>Test-Utility for <br>React-Applications</strong></li>
+                                <li class="fragment fade-up" style="background-color: #fdf6e3">
+                                    <img src="images/airbnb.png" class="plain brand-icon">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-			.check-green {
-				color: #008020;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section class="center">
-					<h1>Jest vs. Enzyme</h1>
-					<h2>Overview</h2>
-					<p>&nbsp;</p>
-					<p>Johannes Jambor, Engineer @SilverTours GmbH</p>
-					<ul class="fa-ul">
-						<li style="list-style: none;"><a href="mailto:jambor@billiger-mietwagen.de"><i class="fa-li fa fa-envelope-o" aria-hidden="true"></i>&nbsp;jambor@billiger-mietwagen.de</a></li>
-						<li style="list-style: none;"><a href="https://github.com/MrSchneepflug"><i class="fa-li fa fa-github" aria-hidden="true"></i>&nbsp;Mr. Schneepflug</li></a>
-					</ul>
-				</section>
+                <section class="center">
+                    <h2>Jest</h2>
 
-				<section>
-					<div class="compare-container">
-						<div class="compare-item">
-							<h2>Jest</h2>
-							<ul>
-								<li class="fragment fade-up"><strong>Test-Framework for <br>JavaScript-Applications</strong></li>
-								<li class="fragment fade-up">
-									<img src="images/facebook.png" class="plain brand-icon">
-								</li>
-							</ul>
-						</div>
-						<div class="compare-item">
-							<h2>Enzyme</h2>
-							<ul>
-								<li class="fragment fade-up"><strong>Test-Utility for <br>React-Applications</strong></li>
-								<li class="fragment fade-up" style="background-color: #fdf6e3">
-									<img src="images/airbnb.png" class="plain brand-icon">
-								</li>
-							</ul>
-						</div>
-					</div>
-				</section>
+                    <section>
+                        <ul style="text-align: center;">
+                            <li class="fragment fade-up">Test Runner</li>
+                            <li class="fragment fade-up">Expectation-Library</li>
+                            <li class="fragment fade-up">Mock-Library</li>
+                            <li class="fragment fade-up">Coverage-Support</li>
+                        </ul>
+                    </section>
+                </section>
 
-				<section>
-					<h2>Jest</h2>
+                <section>
+                    <div class="header">
+                        <ul class="map">
+                            <li><h2>Jest</h2></li>
+                            <li><i class="fa fa-circle"></i> Test Runner</li>
+                            <li><i class="fa fa-circle-o"></i> Expectation-Library</li>
+                            <li><i class="fa fa-circle-o"></i> Mock-Library</li>
+                            <li><i class="fa fa-circle-o"></i> Coverage-Support</li>
+                        </ul>
+                    </div>
 
-					<section>
-						<ul style="text-align: center;">
-							<li class="fragment fade-up">Test Runner</li>
-							<li class="fragment fade-up">Expectation-Library</li>
-							<li class="fragment fade-up">Mock-Library</li>
-							<li class="fragment fade-up">Coverage-Support</li>
-						</ul>
-					</section>
-				</section>
+                    <section>
+                        <h3>Demo</h3>
+                        <img class="plain fragment fade-up" src="images/npm-run-test.gif">
+                    </section>
 
-				<section>
-					<div class="header">
-						<h2>Jest</h2>
+                    <section>
+                        <h3>Usage</h3>
+                        <img class="plain" src="images/jest-usage.png">
+                    </section>
 
-						<ul class="map">
-							<li><i class="fa fa-circle"></i> Test Runner</li>
-							<li><i class="fa fa-circle-o"></i> Expectation-Library</li>
-							<li><i class="fa fa-circle-o"></i> Mock-Library</li>
-							<li><i class="fa fa-circle-o"></i> Coverage-Support</li>
-						</ul>
-					</div>
+                    <section>
+                        <h3>File-Filter</h3>
+                        <img class="plain fragment fade-up" src="images/file-filter-usage.gif">
+                    </section>
 
-					<section>
-						<h3>Demo</h3>
-						<img class="plain fragment fade-up" src="images/npm-run-test.gif">
-					</section>
+                    <section>
+                        <h3>Test-Filter</h3>
+                        <img class="plain fragment fade-up" src="images/test-filter-usage.gif">
+                    </section>
 
-					<section>
-						<h3>Usage</h3>
-						<img class="plain" src="images/jest-usage.png">
-					</section>
+                    <section>
+                        <h3>Environment</h3>
+                        <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+                        describe("Some component", () => {
+                          it('will do some fancy stuff', () => {
 
- 					<section>
-						<h3>File-Filter</h3>
-						<img class="plain fragment fade-up" src="images/file-filter-usage.gif">
-					</section>
+                          });
+                        });
+                    </code></pre>
+                    </section>
 
- 					<section>
-						<h3>Test-Filter</h3>
-						<img class="plain fragment fade-up" src="images/test-filter-usage.gif">
-					</section>
+                    <section>
+                        <h3>Environment</h3>
+                        <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+                        <span style="background-color: #0000FF;">describe</span>("Some component", () => {
+                          <span style="background-color: #0000FF;">it</span>('will do some fancy stuff', () => {
 
-					<section>
-						<h3>Environment</h3>
-						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-						describe("Some component", () => {
-						  it('will do some fancy stuff', () => {
+                          });
+                        });
+                    </code></pre>
+                    </section>
 
-						  });
-						});
-					</code></pre>
-					</section>
+                    <section>
+                        <h3>Environment</h3>
+                        <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+                        import React from "react";
+                        import { configure } from "enzyme";
+                        import Adapter from "enzyme-adapter-react-15";
+                        import jestMock from "jest-mock";
+                        import {
+                          shallowWithIntl,
+                          mountWithIntl
+                        } from "../helpers/create-component-with-intl";
+                        import BackToTopButton from "../../components/back-to-top-button";
+                        import { ArrowTopIcon } from "react-components";
 
-					<section>
-						<h3>Environment</h3>
-						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-						<span style="background-color: #0000FF;">describe</span>("Some component", () => {
-						  <span style="background-color: #0000FF;">it</span>('will do some fancy stuff', () => {
+                        describe("Some component", () => {
+                          it('will do some fancy stuff', () => {
 
-						  });
-						});
-					</code></pre>
-					</section>
-
-					<section>
-						<h3>Environment</h3>
-						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-						import React from "react";
-						import { configure } from "enzyme";
-						import Adapter from "enzyme-adapter-react-15";
-						import jestMock from "jest-mock";
-						import {
-						  shallowWithIntl,
-						  mountWithIntl
-						} from "../helpers/create-component-with-intl";
-						import BackToTopButton from "../../components/back-to-top-button";
-						import { ArrowTopIcon } from "react-components";
-
-						describe("Some component", () => {
-						  it('will do some fancy stuff', () => {
-
-						  });
-						});
-					</code></pre>
-					</section>
+                          });
+                        });
+                    </code></pre>
+                    </section>
 
 
-					<section>
-						<h3>Environment</h3>
-						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-						npm
-						 \_ sh -c react-scripts test --env=jsdom
-						  \_ node /code/node_modules/.bin/react-scripts test --env=jsdom
-						   \_ node /code/node_modules/react-scripts/scripts/test.js --env=jsdom
-						    \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #FF0000;"><strong>$TEST1</strong></span>
-						    \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #00FF00;"><strong>$TEST2</strong></span>
-					</code></pre>
+                    <section>
+                        <h3>Environment</h3>
+                        <pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+                        npm
+                         \_ sh -c react-scripts test --env=jsdom
+                          \_ node /code/node_modules/.bin/react-scripts test --env=jsdom
+                           \_ node /code/node_modules/react-scripts/scripts/test.js --env=jsdom
+                            \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #FF0000;"><strong>$TEST1</strong></span>
+                            \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #00FF00;"><strong>$TEST2</strong></span>
+                    </code></pre>
 
-					<small>simplified output ...</small>
-					</section>
+                    <small>simplified output ...</small>
+                    </section>
 
-					<section>
-						<h3>Alternatives</h3>
+                    <section>
+                        <h3>Alternatives</h3>
 
-						<div class="compare-container">
-							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/jasmine.png" style=" mix-blend-mode: multiply !important;"/>
-							</div>
-							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/mocha.png"  style=" mix-blend-mode: multiply !important;"/>
-							</div>
-						</div>
-					</section>
-				</section>
+                        <div class="compare-container">
+                            <div class="compare-item">
+                                <img class="plain fragment fade-up" src="images/jasmine.png" style=" mix-blend-mode: multiply !important;"/>
+                            </div>
+                            <div class="compare-item">
+                                <img class="plain fragment fade-up" src="images/mocha.png"  style=" mix-blend-mode: multiply !important;"/>
+                            </div>
+                        </div>
+                    </section>
+                </section>
 
-				<section>
-					<div class="header">
-						<div class="header-item">
-							<h2>Jest</h2>
-						</div>
+                <section>
+                    <div class="header">
+                        <div class="header-item">
+                            <h2>Jest</h2>
+                        </div>
 
-						<div class="header-item">
-							<ul class="map" style="float: left;">
-								<li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
-								<li><i class="fa fa-circle"></i> Expectation-Library</li>
-								<li><i class="fa fa-circle-o"></i> Mock-Library</li>
-								<li><i class="fa fa-circle-o"></i> Coverage-Support</li>
-							</ul>
-						</div>
-					</div>
+                        <div class="header-item">
+                            <ul class="map" style="float: left;">
+                                <li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
+                                <li><i class="fa fa-circle"></i> Expectation-Library</li>
+                                <li><i class="fa fa-circle-o"></i> Mock-Library</li>
+                                <li><i class="fa fa-circle-o"></i> Coverage-Support</li>
+                            </ul>
+                        </div>
+                    </div>
 
-					<section>
-						<h3>Example</h3>
+                    <section>
+                        <h3>Example</h3>
 
-						<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
-							describe("Some component", () => {
-							  it('will do some fancy stuff', () => {
-								<span class="fragment fade-right">expect(someResult).toBe(true);</span>
-							  });
-							});
-						</code></pre>
+                        <pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+                            describe("Some component", () => {
+                              it('will do some fancy stuff', () => {
+                                <span class="fragment fade-right">expect(someResult).toBe(true);</span>
+                              });
+                            });
+                        </code></pre>
 
-						<span class="fragment fade-right">
-							<a href="https://facebook.github.io/jest/docs/en/expect.html" target="_blank">
-								https://facebook.github.io/jest/docs/en/expect.html
-							</a>
-						</span>
-					</section>
+                        <span class="fragment fade-right">
+                            <a href="https://facebook.github.io/jest/docs/en/expect.html" target="_blank">
+                                https://facebook.github.io/jest/docs/en/expect.html
+                            </a>
+                        </span>
+                    </section>
 
-					<section>
-						<h3>Snapshots</h3>
+                    <section>
+                        <h3>Snapshots</h3>
 
-						...
-					</section>
+                        <pre style="width: 50%"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+import React from 'react';
+import renderer from 'react-test-renderer';
+<div class="fragment fade-up" data-fragment-index="1">
+const SilverTours = () => {
+  return &lt;div>SilverTours&lt;/div>
+};
+</div>
+<span class="fragment fade-up" data-fragment-index="2">describe("Snapshot Example", () => {</span>
+  <span class="fragment fade-up" data-fragment-index="3">it('will match snapshot', () => {</span>
+<div class="fragment fade-up" data-fragment-index="4">
+    const tree = renderer.create(
+      &lt;SilverTours/>
+    ).toJSON();
+</div><div class="fragment fade-up" data-fragment-index="5">
+    expect(tree).toMatchSnapshot();
+</div>
+  <span class="fragment fade-up" data-fragment-index="3">});</span>
+<span class="fragment fade-up" data-fragment-index="2">});</span>
+                        </code></pre>
 
-					<section>
-						<h3>Alternatives</h3>
+                    </section>
 
-						<div class="compare-container">
-							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/chai.png" style=" mix-blend-mode: multiply !important;"/>
-							</div>
-							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/should.png"/>
-							</div>
-						</div>
-					</section>
-				</section>
+                    <section>
+                        <h3>Alternatives</h3>
 
-				<section>
-					<div class="header">
-						<div class="header-item">
-							<h2>Jest</h2>
-						</div>
+                        <div class="compare-container">
+                            <div class="compare-item">
+                                <img class="plain fragment fade-up" src="images/chai.png" style=" mix-blend-mode: multiply !important;"/>
+                            </div>
+                            <div class="compare-item">
+                                <img class="plain fragment fade-up" src="images/should.png"/>
+                            </div>
+                        </div>
+                    </section>
+                </section>
 
-						<div class="header-item">
-							<ul class="map" style="float: left;">
-								<li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
-								<li><i class="fa fa-check-circle check-green"></i> Expectation-Library</li>
-								<li><i class="fa fa-circle"></i> Mock-Library</li>
-								<li><i class="fa fa-circle-o"></i> Coverage-Support</li>
-							</ul>
-						</div>
-					</div>
+                <section>
+                    <div class="header">
+                        <div class="header-item">
+                            <h2>Jest</h2>
+                        </div>
 
-					<section>
-						<h3>Example</h3>
+                        <div class="header-item">
+                            <ul class="map" style="float: left;">
+                                <li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Expectation-Library</li>
+                                <li><i class="fa fa-circle"></i> Mock-Library</li>
+                                <li><i class="fa fa-circle-o"></i> Coverage-Support</li>
+                            </ul>
+                        </div>
+                    </div>
 
-						<div class="fragment fade-up">
-							<pre style="width: 70%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
-								const apply = (collection, callback) => {
-								<div class="fragment fade-up">
-									for (let index = 0; index < collection.length; index++) {
-									<div class="fragment fade-up">
-										callback(collection[index]);
-									</div>
-									}
-								</div>
-								};
-							</code></pre>
-						</div>
+                    <section>
+                        <h3>Example</h3>
 
-						<div class="fragment fade-up">
-							<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
-								<span class="fragment fade-up">const mockCallback = jest.fn();</span>
-								<span class="fragment fade-up">apply([0,1], mockCallback);</span>
+                        <div class="fragment fade-up">
+                            <pre style="width: 70%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+                                const apply = (collection, callback) => {
+                                <div class="fragment fade-up">
+                                    for (let index = 0; index < collection.length; index++) {
+                                    <div class="fragment fade-up">
+                                        callback(collection[index]);
+                                    </div>
+                                    }
+                                </div>
+                                };
+                            </code></pre>
+                        </div>
 
-								<span class="fragment fade-up">expect(mockCallback.mock.calls.length).toBe(2);</span>
-								<span class="fragment fade-up">expect(mockCallback.mock.calls[0][0]).toBe(0);</span>
-								<span class="fragment fade-up">expect(mockCallback.mock.calls[1][0]).toBe(1);</span>
-							</code></pre>
-						</div>
-					</section>
+                        <div class="fragment fade-up">
+                            <pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+                                <span class="fragment fade-up">const mockCallback = jest.fn();</span>
+                                <span class="fragment fade-up">apply([0,1], mockCallback);</span>
 
-					<section>
-						<h3>Alternatives</h3>
+                                <span class="fragment fade-up">expect(mockCallback.mock.calls.length).toBe(2);</span>
+                                <span class="fragment fade-up">expect(mockCallback.mock.calls[0][0]).toBe(0);</span>
+                                <span class="fragment fade-up">expect(mockCallback.mock.calls[1][0]).toBe(1);</span>
+                            </code></pre>
+                        </div>
+                    </section>
 
-						<div style="background-color: #fdf6e3;">
-							<img class="plain fragment fade-up" src="images/sinon.png" style="mix-blend-mode: multiply !important;">
-						</div>
-					</section>
-				</section>
+                    <section>
+                        <h3>Alternatives</h3>
 
-				<section>
-					<div class="header">
-						<div class="header-item">
-							<h2>Jest</h2>
-						</div>
+                        <div style="background-color: #fdf6e3;">
+                            <img class="plain fragment fade-up" src="images/sinon.png" style="mix-blend-mode: multiply !important;">
+                        </div>
+                    </section>
+                </section>
 
-						<div class="header-item">
-							<ul class="map" style="float: left;">
-								<li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
-								<li><i class="fa fa-check-circle check-green"></i> Expectation-Library</li>
-								<li><i class="fa fa-check-circle check-green"></i> Mock-Library</li>
-								<li><i class="fa fa-circle"></i> Coverage-Support</li>
-							</ul>
-						</div>
-					</div>
-				</section>
+                <section>
+                    <div class="header">
+                        <div class="header-item">
+                            <h2>Jest</h2>
+                        </div>
 
-				<section>
-					<h2>Enzyme</h2>
+                        <div class="header-item">
+                            <ul class="map" style="float: left;">
+                                <li><i class="fa fa-check-circle check-green"></i> Test Runner</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Expectation-Library</li>
+                                <li><i class="fa fa-check-circle check-green"></i> Mock-Library</li>
+                                <li><i class="fa fa-circle"></i> Coverage-Support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
 
-					<section>
-						<ul>
-							<li class="plain fragment fade-up">Render Components</li>
-							<li class="plain fragment fade-up">Simulate Events</li>
-							<li class="plain fragment fade-up">Query</li>
-						</ul>
-					</section>
+                <section>
+                    <h2>Enzyme</h2>
 
-					<section>
-						<h4>Render Components</h4>
-					</section>
-					<section>
-						<h4>Simulate Events</h4>
-					</section>
-					<section>
-						<h4>Query</h4>
-					</section>
-				</section>
+                    <section>
+                        <ul>
+                            <li class="plain fragment fade-up">Render Components</li>
+                            <li class="plain fragment fade-up">Simulate Events</li>
+                            <li class="plain fragment fade-up">Query</li>
+                        </ul>
+                    </section>
 
-			</div>
-		</div>
+                    <section>
+                        <h4>Render Components</h4>
+                    </section>
+                    <section>
+                        <h4>Simulate Events</h4>
+                    </section>
+                    <section>
+                        <h4>Query</h4>
+                    </section>
+                </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+            </div>
+        </div>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
 
-			Reveal.configure({
-			  slideNumber: true,
-			  history: true,
-			  transition: 'none'
-			});
-		</script>
-	</body>
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                center: false,
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+
+            Reveal.configure({
+              slideNumber: true,
+              history: true,
+              transition: 'none'
+            });
+        </script>
+    </body>
 </html>
