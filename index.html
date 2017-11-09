@@ -113,13 +113,40 @@
 					</section>
 
  					<section>
-						<h3>Filter</h3>
-						<img class="fragment fade-up" src="images/usage.gif">
+						<h3>File-Filter</h3>
+						<img class="fragment fade-up" src="images/file-filter-usage.gif">
+					</section>
+
+ 					<section>
+						<h3>Test-Filter</h3>
+						<img class="fragment fade-up" src="images/test-filter-usage.gif">
 					</section>
 
 					<section>
 						<h3>Environment</h3>
 						<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+						describe("Some component", () => {
+						  it('will do some fancy stuff', () => {
+
+						  });
+						});
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>Environment</h3>
+						<pre style="width: 50%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+						import React from "react";
+						import { configure } from "enzyme";
+						import Adapter from "enzyme-adapter-react-15";
+						import jestMock from "jest-mock";
+						import {
+						  shallowWithIntl,
+						  mountWithIntl
+						} from "../helpers/create-component-with-intl";
+						import BackToTopButton from "../../components/back-to-top-button";
+						import { ArrowTopIcon } from "react-components";
+
 						describe("Some component", () => {
 						  it('will do some fancy stuff', () => {
 
@@ -179,6 +206,10 @@
 
 				<section>
 					<h2>Mock-Library</h2>
+
+					<section>
+						<h3></h3>
+					</section>
 
 					<section>
 						<h3>Alternatives</h3>
