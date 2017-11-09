@@ -59,12 +59,14 @@
 			.compare-item {
 				width: 33%;
 				text-align: center;
+				background-color: #fdf6e3;
 			}
 
 			.brand-icon {
 				width: 100px;
 				height: 100px;
 				border: 0 !important;
+				mix-blend-mode: multiply;
 			}
 
 			code {
@@ -80,8 +82,8 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h1>Enzyme vs. Jest</h1>
+				<section class="center">
+					<h1>Jest vs. Enzyme</h1>
 					<h2>Overview</h2>
 					<p>&nbsp;</p>
 					<p>Johannes Jambor, Engineer @SilverTours GmbH</p>
@@ -106,7 +108,7 @@
 							<h2>Enzyme</h2>
 							<ul>
 								<li class="fragment fade-up"><strong>Test-Utility for <br>React-Applications</strong></li>
-								<li class="fragment fade-up">
+								<li class="fragment fade-up" style="background-color: #fdf6e3">
 									<img src="images/airbnb.png" class="plain brand-icon">
 								</li>
 							</ul>
@@ -173,6 +175,17 @@
 					<section>
 						<h3>Environment</h3>
 						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+						<span style="background-color: #0000FF;">describe</span>("Some component", () => {
+						  <span style="background-color: #0000FF;">it</span>('will do some fancy stuff', () => {
+
+						  });
+						});
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>Environment</h3>
+						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
 						import React from "react";
 						import { configure } from "enzyme";
 						import Adapter from "enzyme-adapter-react-15";
@@ -192,15 +205,30 @@
 					</code></pre>
 					</section>
 
+
+					<section>
+						<h3>Environment</h3>
+						<pre style="width: 80%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+						npm
+						 \_ sh -c react-scripts test --env=jsdom
+						  \_ node /code/node_modules/.bin/react-scripts test --env=jsdom
+						   \_ node /code/node_modules/react-scripts/scripts/test.js --env=jsdom
+						    \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #FF0000;"><strong>$TEST1</strong></span>
+						    \_ node /code/node_modules/worker-farm/lib/child/index.js <span class="fragment fade-up" style="color: #00FF00;"><strong>$TEST2</strong></span>
+					</code></pre>
+
+					<small>simplified output ...</small>
+					</section>
+
 					<section>
 						<h3>Alternatives</h3>
 
 						<div class="compare-container">
 							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/jasmine.png"/>
+								<img class="plain fragment fade-up" src="images/jasmine.png" style=" mix-blend-mode: multiply !important;"/>
 							</div>
 							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/mocha.png"/>
+								<img class="plain fragment fade-up" src="images/mocha.png"  style=" mix-blend-mode: multiply !important;"/>
 							</div>
 						</div>
 					</section>
@@ -241,11 +269,17 @@
 					</section>
 
 					<section>
+						<h3>Snapshots</h3>
+
+						...
+					</section>
+
+					<section>
 						<h3>Alternatives</h3>
 
 						<div class="compare-container">
 							<div class="compare-item">
-								<img class="plain fragment fade-up" src="images/chai.png"/>
+								<img class="plain fragment fade-up" src="images/chai.png" style=" mix-blend-mode: multiply !important;"/>
 							</div>
 							<div class="compare-item">
 								<img class="plain fragment fade-up" src="images/should.png"/>
@@ -271,13 +305,40 @@
 					</div>
 
 					<section>
-						<h3></h3>
+						<h3>Example</h3>
+
+						<div class="fragment fade-up">
+							<pre style="width: 70%;"><code style="max-height: 800px;" class="lang-javascript hljs" data-trim data-noescape>
+								const apply = (collection, callback) => {
+								<div class="fragment fade-up">
+									for (let index = 0; index < collection.length; index++) {
+									<div class="fragment fade-up">
+										callback(collection[index]);
+									</div>
+									}
+								</div>
+								};
+							</code></pre>
+						</div>
+
+						<div class="fragment fade-up">
+							<pre style="width: 50%;"><code class="lang-javascript hljs" data-trim data-noescape>
+								<span class="fragment fade-up">const mockCallback = jest.fn();</span>
+								<span class="fragment fade-up">apply([0,1], mockCallback);</span>
+
+								<span class="fragment fade-up">expect(mockCallback.mock.calls.length).toBe(2);</span>
+								<span class="fragment fade-up">expect(mockCallback.mock.calls[0][0]).toBe(0);</span>
+								<span class="fragment fade-up">expect(mockCallback.mock.calls[1][0]).toBe(1);</span>
+							</code></pre>
+						</div>
 					</section>
 
 					<section>
 						<h3>Alternatives</h3>
 
-						<img class="plain fragment fade-up" src="images/sinon.png">
+						<div style="background-color: #fdf6e3;">
+							<img class="plain fragment fade-up" src="images/sinon.png" style="mix-blend-mode: multiply !important;">
+						</div>
 					</section>
 				</section>
 
