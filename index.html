@@ -25,6 +25,7 @@
         <style type="text/css">
             ul {
                 list-style-type: none !important;
+                margin: 0 !important;
             }
 
             ul.map {
@@ -539,7 +540,7 @@ const SilverTours = () => {
 
 it("should render a div with 'SilverTours' as content", () => {
   <span class="fragment fade-up" data-fragment-index="1">const wrapper = shallow(&lt;SilverTours/>);</span>
-  <span class="fragment fade-up" data-fragment-index="2">expect(wrapper.find('div').html()).toEqual('&lt;div>SilverTours&lt;/div>');</span>
+  <span class="fragment fade-up" data-fragment-index="2">expect(wrapper.find('div').html()).toEqual('SilverTours');</span>
 });
                         </code></pre>
 
